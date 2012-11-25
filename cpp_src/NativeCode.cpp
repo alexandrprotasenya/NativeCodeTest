@@ -42,6 +42,8 @@ JNIEXPORT void JNICALL Java_by_framework_nativeapp_NativeCode_addOneToArray
 		for(int i = 0; i < len; i++) {
 			arr[i] = arr[i]+1;
 		}
+	// Т.к. GetIntArrayElements возвращает нам копию массива, необходимо
+	// при необходимости вернуть Java изменнённый массив
 	env->ReleaseIntArrayElements(jarray, arr, 0);
 }
 
